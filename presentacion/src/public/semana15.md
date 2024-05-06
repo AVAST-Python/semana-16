@@ -9,11 +9,32 @@
 
 # Pygame
 
+---
+
+# Pygame
+
 Qué es
 Cómo trabajar
 
 Online:
 https://trinket.io/features/pygame
+https://replit.com/languages/pygame
+
+
+---
+
+Ejemplo de juego a conseguir
+Cómo funciona pygame
+Event Loop
+Pintar imágenes
+Layers
+Sprites
+
+Ajustar velocidad / fps
+https://realpython.com/lessons/game-speed/
+Time deltas
+
+
 
 
 
