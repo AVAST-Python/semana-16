@@ -22,6 +22,9 @@ https://trinket.io/features/pygame
 https://replit.com/languages/pygame
 
 
+Sprites:
+https://www.reddit.com/r/spelunky/comments/ur5eor/terminalmontages_mario_sprite_for_spelunky_made/
+
 ---
 
 Ejemplo de juego a conseguir
