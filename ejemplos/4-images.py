@@ -7,14 +7,15 @@ pygame.init()
 # Set up the screen
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Keyboard Events")
+pygame.display.set_caption("Images")
 
 FPS = 30
-square_x, square_y = WIDTH // 2, HEIGHT // 2
-square_size = 20
+mario_x, mario_y = WIDTH // 2, HEIGHT // 2
+mario = pygame.image.load('sprites/mario/mario_quieto.png')
 
 WHITE = (255, 255, 255)
-RED = (255, 0, 0)
+
+move_x, move_y = 0, 0
 
 # Main game loop
 running = True
@@ -26,21 +27,30 @@ while running:
             running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                square_x -= 5
+                move_x = -5
             elif event.key == pygame.K_RIGHT:
-                square_x += 5
+                move_x = 5
             elif event.key == pygame.K_UP:
-                square_y -= 5
+                move_y = -5
             elif event.key == pygame.K_DOWN:
-                square_y += 5
+                move_y = 5
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                move_x = 0
+            elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+                move_y = 0
+
+    # Update position
+    mario_x += move_x
+    mario_y += move_y
 
     clock.tick(FPS)
 
     # Clear the screen
     screen.fill(WHITE)
 
-    # Draw the square
-    pygame.draw.rect(screen, RED, (square_x, square_y, square_size, square_size))
+    # Draw mario
+    screen.blit(mario, (mario_x, mario_y))
 
     # Update the display
     pygame.display.flip()

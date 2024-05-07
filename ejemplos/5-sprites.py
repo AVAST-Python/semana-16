@@ -8,7 +8,7 @@ pygame.init()
 # Set up the screen
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Square")
+pygame.display.set_caption("Sprites")
 
 FPS = 30
 sprite_x, sprite_y = WIDTH // 2, HEIGHT // 2
