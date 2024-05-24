@@ -19,10 +19,18 @@ square_size = 20
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
+def scale(imagen, factor):
+    original_width, original_height = imagen.get_size()
+    return pygame.transform.scale(imagen, (int(original_width * factor), int(original_height * factor)))
+
+puerta = pygame.image.load(f'{DIRECTORY}/../sprites/game/puerta_cerrada.png')
+puerta = scale(puerta, 0.75)
+puerta_coords = (100,100)
+
 disparando = False
 disparo_actual = 0
-duracion_disparo = 1000  # Duration of each frame in milliseconds
-disparo_coords = (100, 100)
+duracion_disparo = 30  # Duration of each frame in milliseconds
+disparo_coords = (230, 320)
 tamaño_disparo = (50, 50)
 
 disparo = [
@@ -49,6 +57,7 @@ while running:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:
                 disparando = True
+                last_frame_update = pygame.time.get_ticks()
 
     clock.tick(FPS)
 
@@ -56,7 +65,7 @@ while running:
     screen.fill(WHITE)
 
     # Draw the door
-    # pygame.draw.rect(screen, RED, (square_x, square_y, square_size, square_size))
+    screen.blit(puerta, puerta_coords)
 
     # Draw the bullet
     if disparando:

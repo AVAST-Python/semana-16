@@ -66,6 +66,12 @@ screen.blit(mario, (mario_x, mario_y))
 ```
 <!-- .element style="font-size: 1.5rem;" -->
 
+Las imágenes se pueden escalar:
+```python
+imagen_escalada = pygame.transform.scale(imagen, (nuevo_ancho, nuevo_alto))
+```
+<!-- .element style="font-size: 1.5rem;" -->
+
 ---
 
 # Movimiento
@@ -87,18 +93,41 @@ También sirve para ajustar la velocidad: `v = d / t`
 
 # Ejercicio 1
 
-QUE HAGAN EL DISPARO
+![gif del disparo](./img/disparo.gif) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
 
-EXTRA: QUE HAGAN LOS TRES DISPAROS
+- Esperar a que se pulse una tecla
+- Mostrar el disparo
+- Ir cambiando la imagen del disparo
+
+Si has acabado, puedes probar a hacer tres disparos en tres puertas
 
 ---
 
+# Capas
 
-# Próximo día
+- Normalmente necesitaremos "apilar" objetos en el juego
+- Cuando hay muchos objetos esto puede complicarse. Para ello, se pintan objetos en capas:
 
-- Layers
-- Sprites
+```python
+background_layer = pygame.Surface(screen.get_size())
+ # Use SRCALPHA for transparency
+sprite_layer = pygame.Surface(screen.get_size(), pygame.SRCALPHA)
+front_layer = pygame.Surface(screen.get_size(), pygame.SRCALPHA)
+```
+<!-- .element style="font-size: 1.5rem;" -->
 
+- Se pinta cada objeto en su capa. Habrán capas que quizá no cambien en todo el juego, como el fondo:
+```python
+sprite_layer.blit(imagen, (sprite_x, sprite_y))
+```
+<!-- .element style="font-size: 1.5rem;" -->
+- Después se pintan en orden:
+```python
+screen.blit(background_layer, (0, 0))
+screen.blit(sprite_layer, (0, 0))
+screen.blit(front_layer, (0, 0))
+```
+<!-- .element style="font-size: 1.5rem;" -->
 
 
 
