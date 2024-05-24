@@ -20,7 +20,7 @@ RED = (255, 0, 0)
 move_x, move_y = 0, 0
 
 # Load sprite images
-sprite_folder = "sprites/mario"  # Folder containing sprite images
+sprite_folder = "../sprites/mario"  # Folder containing sprite images
 sprites = []
 for i in range(1, 9):
     sprite_path = os.path.join(sprite_folder, f"mario_{i}.png")
@@ -28,7 +28,7 @@ for i in range(1, 9):
     sprites.append(sprite)
 
 # Load the still sprite
-sprite_still = pygame.image.load("sprites/mario/mario_quieto.png")
+sprite_still = pygame.image.load("../sprites/mario/mario_quieto.png")
 
 # Set up variables for animation
 frame_count = 8  # Number of frames in the sprite sheet

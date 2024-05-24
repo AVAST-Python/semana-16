@@ -11,7 +11,7 @@ pygame.display.set_caption("Images")
 
 FPS = 30
 mario_x, mario_y = WIDTH // 2, HEIGHT // 2
-mario = pygame.image.load('sprites/mario/mario_quieto.png')
+mario = pygame.image.load('../sprites/mario/mario_quieto.png')
 
 WHITE = (255, 255, 255)
 

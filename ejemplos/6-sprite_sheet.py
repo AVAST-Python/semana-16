@@ -19,14 +19,14 @@ RED = (255, 0, 0)
 move_x, move_y = 0, 0
 
 # Load the sprite sheet
-sprite_sheet = pygame.image.load("sprites/mario/mario_all.png")
+sprite_sheet = pygame.image.load("../sprites/mario/mario_all.png")
 
 # Define sprite dimensions
 sprite_width = 80
 sprite_height = sprite_sheet.get_height()  # Assuming all sprites have the same height
 
 # Load the still sprite
-sprite_still = pygame.image.load("sprites/mario/mario_quieto.png")
+sprite_still = pygame.image.load("../sprites/mario/mario_quieto.png")
 
 # Set up variables for animation
 frame_count = 8  # Number of frames in the sprite sheet
